@@ -1,0 +1,235 @@
+main{
+    // margin: 1em;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
+    // padding-top: 2em;
+    table{
+        border: 1px solid #333;
+        display: none; 
+        thead,
+        tfoot{
+
+            background-color: #333;
+            color: #fff;
+        }
+        .date, .week{
+            padding-bottom: auto;
+            padding-top: 0.4em;
+        }
+        thead.tableweek{
+            background: none;
+            color: rgb(0, 0, 0);
+            height: 2em;
+            font-size: 2em;
+            font-weight: 400;
+            padding-bottom: auto;
+            padding-top: 0.4em;
+        }
+        .rest{
+            background-color: white;
+            color: black;
+            font-weight: 400;
+            padding-bottom: 0.2;
+            padding: 0.2em;
+            padding-top: 0.4em;
+            font-size: 18px;
+        }
+        tbody{
+            /* does not work with display table on the table */
+
+            td, th {
+                border: 1px solid #333;
+                text-align: left;
+                font-weight: 400;
+                padding-bottom: 0.2;
+                padding: 0.2em;
+                padding-top: 0.4em;
+                font-size: 14px;
+            }
+            tr.extra{
+                td, th {
+                    padding-bottom: 0;
+                    padding: 0.2em;
+                    input{
+                        padding: 0.2em;
+                        padding-top: 0.4em;
+                    }
+                }
+            }
+        }
+    }
+    
+    div{
+        /* buttons onderaan */
+        // margin-top: 2em;
+        // margin-bottom: 1em;
+        // display: flex;
+        // justify-content: space-between;
+    }
+}
+
+
+/* some classes that depend on content in the table*/
+.green {
+    background-color: rgb(63, 165, 43);
+    color: #fff;
+}
+.yellow {
+    background-color: rgb(231, 199, 91);
+    color: rgb(0, 0, 0);
+}
+.red {
+    background-color: rgb(207, 0, 0);
+    color: #fff;
+}
+.blue {
+    background-color: rgb(0, 173, 207);
+    color: rgb(255, 255, 255);
+}
+
+button.activeButton {
+    opacity: 100%;
+}
+
+.button {
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    padding: 0.5rem;
+    padding-top: 0.75rem;
+    background: linear-gradient(138deg, #18333D 0%, #306579 100%);
+    border-radius: 1rem;
+    width: 11rem;
+    height: 4rem;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
+    margin-top: 0.3rem;
+    opacity: 70%;
+    transition: 200ms;
+}
+.button:hover{
+    background: linear-gradient(138deg, #18333D 0%, #18333D 100%);
+}
+.button-save{
+    color: black;
+    font-size: 1rem;
+    padding: 0.5rem;
+    padding-top: 0.75rem;
+    background-color: rgb(185, 185, 185);
+    border-radius: 0.5rem;
+    width: 8rem;
+    height: 3rem;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
+    margin-top: 0.3rem;
+    transition: 200ms;
+}
+.button-save:hover{
+    background-color: rgb(200, 200, 200);
+}
+
+
+table.active{
+    display: table;
+}
+.top-custom-legenda{
+    top: 7.4rem;
+}
+
+.extra-option{
+    background-color: rgb(225, 225, 225);
+    box-shadow: none;
+    padding-top: 0.3em;
+}
+.extra-option::placeholder{
+    color: black;
+    opacity: 80%;
+}
+.extra-option:focus{
+    outline: 1px dashed black;
+}
+@media(min-width: 777px){
+    main{
+        table{
+            tbody{    
+                td, th {
+                    border: 1px solid #333;
+                    text-align: left;
+                    font-weight: 400;
+                    padding-bottom: 0em;
+                    padding: 0.2em;
+                    padding-top: 0.4em;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+@media(min-width: 1070){
+    main{
+        table{
+            tbody{    
+                td, th {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+
+
+// the loading screen
+#loadingscreen {
+    display: none;
+    background-color: #F8F8F8;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+    position: absolute;
+    top: 72px;
+    bottom: 0;
+    transition: 200ms;
+    place-content: center;
+
+}
+
+#loadingscreen img {
+//  skills animatie planche -> Fl -> etc etc heel snel vagend
+    position: absolute;
+    top: 300px;
+    width: 300px;
+}
+
+
+#loadingscreen div div{
+// loading bar 
+    width: 300px;
+    height: 10px;
+    background-color: #18333D;
+    border-radius: 40px;
+    animation-name: slidein;
+    animation-duration: 5s;
+    animation-delay: 0.1s;
+        @keyframes slidein {
+            from {
+                width: 0px;
+            }
+          
+            to {
+                width: 300px;
+            }
+        }
+}
+#loadingscreen > div{
+    // loading bar 
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        top: 540px;
+        width: 300px;
+        height: 10px;
+        background-color: #bebebe;
+        border-radius: 40px;
+}

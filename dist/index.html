@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="min-h-full" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/output.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Calisthenics workout generator</title>
+</head>
+
+
+
+<body id="index" class="bg-gray-light font-telugu h-full overflow-x-hidden">
+   <header class="bg-white h-fit w-full p-3 pl-4 pr-4 flex justify-between drop-shadow-md mb-10">
+       <h1 class="min-w-fit text-xl font-extrabold" >Calisthenics skills <span class="relative -bottom-5 -left-5 text-sm font-bold">workout generator</span></h1>
+       <nav class="w-fit">
+           <ul class="">
+                <!-- <li><a href="#">Home</a></li> 
+                <li><a href="#">Share your progression</a></li> 
+                <li><a href="#">Formcheck</a></li>  -->
+                <li><a class="" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="54.946" height="46" viewBox="0 0 54.946 46">
+                    <g id="Group_19" data-name="Group 19" transform="translate(21.437 -87)">
+                      <g id="Ellipse_5" data-name="Ellipse 5" transform="translate(-16.718 87)" fill="none" stroke="#607a83" stroke-width="2">
+                        <circle cx="23" cy="23" r="23" stroke="none"/>
+                        <circle cx="23" cy="23" r="22" fill="none"/>
+                      </g>
+                      <path id="Union_5" data-name="Union 5" d="M24.4,31.934l-5.425-1.591L15.61,28.159l-2.178-2.067H12.74l.01-.026c-4.378-.321-8.42-3.666-8.42-3.666S1.139,21.483.114,20,5.351,9.144,5.351,9.144l3.4-.331,3.15.782.518,1.66-.832,1.637H7.029s-.268,3.135-.5,5.61c.5-.8,1.709-1.825,4.371-2.158,2.7-.339,3.81.354,4.334,1.046.632.832.421,1.664,1.118.707,1.091-1.5,4.524-1.04,5.5-.874a16.092,16.092,0,0,1,4.069-.929,8.247,8.247,0,1,1,3.449.031,16.088,16.088,0,0,1,3.757.893c1.014-.169,4.389-.6,5.47.879.7.957.485.125,1.115-.707.524-.692,1.633-1.385,4.336-1.046,2.666.333,3.874,1.358,4.373,2.161-.234-2.476-.5-5.613-.5-5.613H43.361l-.832-1.637.521-1.66L46.2,8.812l3.4.331S55.858,18.524,54.833,20s-4.216,2.4-4.216,2.4-4.018,3.323-8.379,3.663l.012.03H40.736l-4.144,3.866-6.407,1.976Z" transform="translate(-21.437 93.944)"/>
+                    </g>
+                  </svg>
+                  </a></li> 
+           </ul>
+       </nav>
+   </header>
+
+
+
+   <main class="relative mdlg:static flex flex-col bg-gray-light pt-2 h-full">
+      
+        <div class="w-full pl-14 md:pl-0 mr-0 self-end md:mr-2 usm:mr-16 usm:w-9/12 xl:mr-[3.9rem] max-w-2xl">
+            <h2 class="md:w-3/5 mr-0 text-2xl font-bold">Answer these questions for your <span class="text-blue font-telugu">personal workout!</span></h2>
+        </div>
+        
+        <section class="-order-1 w-10/12 mb-10 mdlg:order-none mdlg:flex mdlg:flex-col mdlg:w-4/12  lg:w-full lg:max-w-lg ml-8">
+            <h3 class="font-extrabold">For who is this website:</h3>
+            <ul>
+                <li>For anyone that doesn’t know where to start with making a workout.</li>
+                <li>For anyone that wants to progress in calisthenics skills like 
+                    planche, front lever, iron cross and many more</li>
+            </ul>
+            <h3 class="font-extrabold mt-4">How is the workout build?</h3>
+            <p>After you fill in the questions about which goal you have and 
+                which exercises you are able to perform, the website will generate a workout for you. I programmed is so it knows what you have answered, what kind of exercises are good for your goal, it will implement the basics on the right day and if you don’t have a goal for example legs, it will implement extra exercises so you don’t have only one exercises to do. 
+                The cycle begins with more of a muscle conditioning and hypertrophy phase to build muscle, After that the intensity and difficulty will change and the workout will focus more on strength. 
+                If a week where you feel tired follows up a week where you felt really strong (after around 4-7 weeks), you want that week to be your deload-week. This number needs to be filled in in the last question. <strong>Note! </strong>The seconds that you need to fill in after you chose your progression are
+                holds with good form. Also, a hold can depend on the day, make sure u are having 
+                that hold you are saying for at least 3 workouts in a row.</p>
+                
+                <p class="mt-5">After you completed the workout cycle you should have an increased max reps of max hold of the skill you want to accomplish. Make with these numbers a new workout cycle with an improved number of seconds or even a higher progression.</p>
+       </section>
+       <form class="mb-32 mdlg:mb-0 mdlg:absolute top-[11.4rem] z-10 text-white bg-gradient-to-br from-darkgray-dark to-darkgray-light p-6 md:p-16 pt-10 rounded-3xl drop-shadow-xl h-3/4 self-end mr-6 md:mr-10 xl:mr-24" action="workout.html" target="_blank" method="GET">
+           <div class="mb-6">
+                <div>
+                    <div>
+                        <label for="goal-1">What is your primary goal?</label>
+                        <select class="bg-transparent" id="goal-1" onchange="show(this, 1)" name="goal-1">
+                            <option hidden>Choose...</option>
+                            <option value="0">-</option>
+                            <option value="0" data-exercise-divider="solo">Building strenght</option>
+                        </select>
+                    </div>
+                    <div>
+                        <!-- <label for="numberSecP">Sec</label>
+                        <input type="number" name="numberSecP">
+                        <button>?</button> -->
+                    </div>
+                </div>
+            
+          
+                <div>
+                    <div>
+                        <label for="CurrentPone">What is your current progression?</label>
+<!-- de goal hier is dat ik de select moet laten zien die overeen komt met de value van de vorige select
+dit moet me denk ik wel lukken
+ook moet er een functie komen die in de gaten houdt dat je niet dezelfde option kiest bij de 3 vragen -->
+                        <select class="select1" onchange="show(this, 2)" id="Planche0" name="Planche">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Front-lever0" name="Front-lever">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Lsit-Vsit-Isit-Manna0" name="Lsit-Vsit-Isit-Manna">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Iron-cross0" name="Iron-cross">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Back-lever0" name="Back-lever">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Human-flag0" name="Human-flag">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Muscle-up0" name="Muscle-up">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="One-arm-pullup0" name="One-arm-pullup">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Dragon-flag0" name="Dragon-flag">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Planche-pushup0" name="Planche-pushup">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Maltese0" name="Maltese">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Front-lever-touch0" name="Front-lever-touch">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Victorian-cross0" name="Victorian-cross">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select1" onchange="show(this, 2)" id="Pistol-squats0" name="Pistol-squats">
+                            <option hidden >Choose...</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="SecCurrentPone">Sec</label>
+                        <input type="number" name="SecCurrentPone" min="3" max="15">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <div>
+                    <div>
+                        <label for="goal-2">What is your secondary goal?</label>
+                        <select id="goal-2" onchange="show(this, 3)" name="goal-2">
+                            <option hidden value="0">Optional...</option>
+                            <option value="0">-</option>
+                        </select>
+                    </div>
+                    <div>
+                        <!-- <label for="numberSecS">Sec</label>
+                        <input type="number" name="secondary"> -->
+                    </div>
+                </div>
+            
+            
+                <div>
+                    <div>
+                        <label for="CurrentPtwo">What is your current progression?</label>
+       
+                        <select class="select3" onchange="show(this, 4)"  id="Planche1" name="Planche">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)"  id="Front-lever1" name="Front-lever">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="Lsit-Vsit-Isit-Manna1" name="Lsit-Vsit-Isit-Manna">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="Iron-cross1" name="Iron-cross">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="Back-lever1" name="Back-lever">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="Human-flag1" name="Human-flag">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="Muscle-up1" name="Muscle-up">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="One-arm-pullup1" name="One-arm-pullup">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="Dragon-flag1" name="Dragon-flag">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="Planche-pushup1" name="Planche-pushup">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="Maltese1" name="Maltese">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="Front-lever-touch1" name="Front-lever-touch">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="Victorian-cross1" name="Victorian-cross">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select3" onchange="show(this, 4)" id="Pistol-squats1" name="Pistol-squats">
+                            <option hidden >Choose...</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="SecCurrentPtwo">Sec</label>
+                        <input type="number" name="SecCurrentPtwo" min="3" max="15">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+
+                <div>
+                    <div>
+                        <label for="goal-3">What is your third goal?</label>
+                        <select  id="goal-3" onchange="show(this, 5)" name="goal-3">
+                            <option hidden value="0">Optional...</option>
+                            <option value="0">-</option>
+                        </select>
+                    </div>
+                    <div>
+                        <!-- <label for="numberSecT">Sec</label>
+                        <input type="number" name="numberSecT"> -->
+                    </div>
+                </div>
+            
+
+                <div>
+                    <div >
+                        <label for="CurrentPthree">What is your current progression?</label>
+        
+                        <select class="select5"  onchange="show(this, 6)" id="Planche2" name="Planche">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5"  onchange="show(this, 6)" id="Front-lever2" name="Front-lever">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5"  onchange="show(this, 6)" id="Lsit-Vsit-Isit-Manna2" name="Lsit-Vsit-Isit-Manna">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5"  onchange="show(this, 6)" id="Iron-cross2" name="Iron-cross">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5"  onchange="show(this, 6)" id="Back-lever2" name="Back-lever">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5"  onchange="show(this, 6)" id="Human-flag2" name="Human-flag">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5"  onchange="show(this, 6)" id="Muscle-up2" name="Muscle-up">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5"  onchange="show(this, 6)" id="One-arm-pullup2" name="One-arm-pullup">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5"  onchange="show(this, 6)" id="Dragon-flag2" name="Dragon-flag">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5"  onchange="show(this, 6)" id="Planche-pushup2" name="Planche-pushup">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5"  onchange="show(this, 6)" id="Maltese2" name="Maltese">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5" onchange="show(this, 6)"  id="Front-lever-touch2" name="Front-lever-touch">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5"  onchange="show(this, 6)" id="Victorian-cross2" name="Victorian-cross">
+                            <option hidden >Choose...</option>
+                        </select>
+                        <select class="select5" onchange="show(this, 6)" id="Pistol-squats2" name="Pistol-squats">
+                            <option hidden >Choose...</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="SecCurrentPthree">Sec</label>
+                        <input type="number" name="SecCurrentPthree" min="3" max="15">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="mb-6">
+                <div class="flex flex-col"> 
+                    <label for="">Choose a variation that u are within failure in 8-12 reps</label> 
+                    <div class="flex mt-2 w-full justify-between h-36 ">
+                        <div class="flex w-full">
+                            <label for="shoulders">For shoulders</label> 
+                            <select onchange="show(this, 7)"  name="shoulders"  id="Shoulders" required>
+                                <option hidden >Choose...</option>
+                            </select>
+                        </div>
+                        <div class="flex w-full">
+                            <label for="pull">For pull</label> 
+                            <select  onchange="show(this, 8)" name="pull" id="Pull" required>
+                                <option hidden >Choose...</option>
+                            </select>
+                        </div>
+                        <div class="flex w-full">
+                            <label for="dips">For chest + triceps</label> 
+                            <select  onchange="show(this, 9)" name="dips" id="Dips" required>
+                                <option hidden >Choose...</option>
+                            </select>
+                        </div>
+                        <div class="flex w-full">
+                            <label for="core">For core</label> 
+                            <select  onchange="show(this, 10)"  name="core" id="Core" required>
+                                <option hidden >Choose...</option>
+                            </select>
+                        </div> 
+                        <div class="flex w-full">
+                            <label for="squats">For legs</label> 
+                            <select onchange="show(this, 11)" name="squats" id="Squats" required>
+                                <option hidden >Choose...</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div>
+                <div> 
+                    <label for="workoutWeeks">How many weeks do you want in your cycle?</label> 
+                        <div>
+                            <label for="weekNumber">Weeks</label>
+                            <input id="setWeekNumber" onchange="getNumberOfWeeks(this)" type="number" placeholder="5" name="weekNumber" min="4" max="7">
+                        </div>
+                </div>
+            </div>
+              <img class=" absolute -z-10 w-0 -bottom-[128px] -left-[15rem] mdlg:-left-3 mdl:w-72 mdlg:right-[27rem] mdlg:-bottom-[70px] lg:-left-[15rem] lg:right-auto  xxl:w-fit xxl:-bottom-[4.45rem] xxl:-left-[26rem]" src="../images/plancheimg.png" alt="img of someone doing planche">
+
+            <button class="h-16 text-white w-44 absolute -bottom-12 mdlg:-bottom-5 -right-5 xl:-right-10 bg-gradient-to-br from-blue-dark to-blue-light p-2 pt-3 text-xl rounded-2xl" type="submit">Generate</button>
+       </form>
+
+      <img class="flex absolute bottom-0 mdlg:right-0 md:left-[20rem] mdlg:left-[31.5rem] xl:left-auto  xl:right-0" src="../images/backgroundimg.png" alt="background img with a lot of big blocks">
+
+      
+   </main>
+   
+   
+   
+   
+
+   
+   
+   <footer></footer>
+   <script defer src="../js/progression.js"></script>
+   <script defer src="../js/exercise.js"></script>
+   <script defer src="../js/normalExercises.js"></script>
+   <script defer src="../js/createContent.js"></script> 
+   <script defer src="../js/multiplyAndManipulateTheTemplates.js" ></script>
+
+   <script defer src="../js/addContent.js"></script> 
+</body>
+
+</html>

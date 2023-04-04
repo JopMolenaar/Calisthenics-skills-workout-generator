@@ -1,0 +1,250 @@
+main table {
+  border: 1px solid #333;
+  display: none;
+}
+
+main table thead,
+main table tfoot {
+  background-color: #333;
+  color: #fff;
+}
+
+main table .date, main table .week {
+  padding-bottom: auto;
+  padding-top: 0.4em;
+}
+
+main table thead.tableweek {
+  background: none;
+  color: black;
+  height: 2em;
+  font-size: 2em;
+  font-weight: 400;
+  padding-bottom: auto;
+  padding-top: 0.4em;
+}
+
+main table .rest {
+  background-color: white;
+  color: black;
+  font-weight: 400;
+  padding-bottom: 0.2;
+  padding: 0.2em;
+  padding-top: 0.4em;
+  font-size: 18px;
+}
+
+main table tbody {
+  /* does not work with display table on the table */
+}
+
+main table tbody td, main table tbody th {
+  border: 1px solid #333;
+  text-align: left;
+  font-weight: 400;
+  padding-bottom: 0.2;
+  padding: 0.2em;
+  padding-top: 0.4em;
+  font-size: 14px;
+}
+
+main table tbody tr.extra td, main table tbody tr.extra th {
+  padding-bottom: 0;
+  padding: 0.2em;
+}
+
+main table tbody tr.extra td input, main table tbody tr.extra th input {
+  padding: 0.2em;
+  padding-top: 0.4em;
+}
+
+main div {
+  /* buttons onderaan */
+}
+
+/* some classes that depend on content in the table*/
+.green {
+  background-color: #3fa52b;
+  color: #fff;
+}
+
+.yellow {
+  background-color: #e7c75b;
+  color: black;
+}
+
+.red {
+  background-color: #cf0000;
+  color: #fff;
+}
+
+.blue {
+  background-color: #00adcf;
+  color: white;
+}
+
+button.activeButton {
+  opacity: 100%;
+}
+
+.button {
+  color: white;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding: 0.5rem;
+  padding-top: 0.75rem;
+  background: linear-gradient(138deg, #18333D 0%, #306579 100%);
+  border-radius: 1rem;
+  width: 11rem;
+  height: 4rem;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+  margin-top: 0.3rem;
+  opacity: 70%;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.button:hover {
+  background: linear-gradient(138deg, #18333D 0%, #18333D 100%);
+}
+
+.button-save {
+  color: black;
+  font-size: 1rem;
+  padding: 0.5rem;
+  padding-top: 0.75rem;
+  background-color: #b9b9b9;
+  border-radius: 0.5rem;
+  width: 8rem;
+  height: 3rem;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+  margin-top: 0.3rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.button-save:hover {
+  background-color: #c8c8c8;
+}
+
+table.active {
+  display: table;
+}
+
+.top-custom-legenda {
+  top: 7.4rem;
+}
+
+.extra-option {
+  background-color: #e1e1e1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding-top: 0.3em;
+}
+
+.extra-option::-webkit-input-placeholder {
+  color: black;
+  opacity: 80%;
+}
+
+.extra-option:-ms-input-placeholder {
+  color: black;
+  opacity: 80%;
+}
+
+.extra-option::-ms-input-placeholder {
+  color: black;
+  opacity: 80%;
+}
+
+.extra-option::placeholder {
+  color: black;
+  opacity: 80%;
+}
+
+.extra-option:focus {
+  outline: 1px dashed black;
+}
+
+@media (min-width: 777px) {
+  main table tbody td, main table tbody th {
+    border: 1px solid #333;
+    text-align: left;
+    font-weight: 400;
+    padding-bottom: 0em;
+    padding: 0.2em;
+    padding-top: 0.4em;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1070) {
+  main table tbody td, main table tbody th {
+    font-size: 18px;
+  }
+}
+
+#loadingscreen {
+  display: none;
+  background-color: #F8F8F8;
+  height: 100vh;
+  width: 100vw;
+  z-index: 5;
+  position: absolute;
+  top: 72px;
+  bottom: 0;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  place-content: center;
+}
+
+#loadingscreen img {
+  position: absolute;
+  top: 300px;
+  width: 300px;
+}
+
+#loadingscreen div div {
+  width: 300px;
+  height: 10px;
+  background-color: #18333D;
+  border-radius: 40px;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 300px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 300px;
+  }
+}
+
+#loadingscreen > div {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 540px;
+  width: 300px;
+  height: 10px;
+  background-color: #bebebe;
+  border-radius: 40px;
+}
+/*# sourceMappingURL=workout.css.map */
