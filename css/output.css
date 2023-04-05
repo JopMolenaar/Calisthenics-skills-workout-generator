@@ -1017,6 +1017,10 @@ video {
     right: 27rem;
   }
 
+  .mdlg\:-bottom-\[69px\] {
+    bottom: -69px;
+  }
+
   .mdlg\:order-none {
     order: 0;
   }
@@ -1089,6 +1093,14 @@ video {
 
   .xxl\:-left-\[26rem\] {
     left: -26rem;
+  }
+
+  .xxl\:-bottom-\[4\.40rem\] {
+    bottom: -4.40rem;
+  }
+
+  .xxl\:-bottom-\[4\.37rem\] {
+    bottom: -4.37rem;
   }
 
   .xxl\:w-fit {
