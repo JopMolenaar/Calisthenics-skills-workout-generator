@@ -1,12 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./**/.{html,js}"],
+  content: ['./index.html',
+            './workout.html',
+          ],
   theme: {
     screens: {
       usm:"687px",
       md: '895px',
       mdl: "1070px",
-      mdlg: "1200px",
+      mdlg: "1220px",
       lg: '1320px',
       xl: '1545px',
       xxl: "1745px",

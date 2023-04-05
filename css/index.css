@@ -37,9 +37,7 @@ main form {
   min-width: 19em;
   width: 90vw;
   max-width: 44em;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 74%;
 }
 
 main form > div > div {

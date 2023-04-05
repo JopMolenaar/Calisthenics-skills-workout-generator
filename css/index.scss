@@ -21,33 +21,7 @@ input{
 }
   
 main{
-    // margin: 1em;
-    // display: flex;
-    // flex-direction: column;
-
-    > div{
-        // margin-top: 2em;
-        // margin-bottom: 1em;
-        // display: flex;
-        // align-self: center;
-        // width: 90vw;
-        // max-width: 44em;
-        h2 {
-            // margin: 0;
-            // font-size: 1.2em;
-            // // font-weight: 600;
-            // max-width: 38em;
-        }
-
-        // > button {
-        //     width: 2.5em;
-        //     height: 2.5em;
-        //     align-self: center;
-        //     margin-left: 1em;
-        // }
-    }
-
-    form{
+     form{
         // margin-top: 1em;
         align-self: center;
         display: flex;
@@ -56,10 +30,9 @@ main{
         min-width: 19em;
         width: 90vw;
         max-width: 44em;
-        height: fit-content;
+        height: 74%;
 
         > div{
-            // margin-bottom: 1em;
             > div{
                 padding-bottom: 0.2em;
                 display: none;
@@ -88,12 +61,7 @@ main{
                     justify-content: left;
                     display: flex;
                     flex-direction: row;
-                    width: 100%;
-
-                    input{
-                        // width: 9.2em;
-                    }
-                    
+                    width: 100%;                    
                     label{
                         order: 2;
                     }
@@ -232,10 +200,6 @@ main{
 
 @media(min-width: 45.625em){
     main{
-
-        >div {
-            // margin-top: 2em;
-        }
         form{
             div{
                 > div{
@@ -273,9 +237,6 @@ main{
                             // justify-content: space-between;
                             width: 100%;
                             // margin: 0;
-                            label{
-                                // order: 0;
-                            }
                          }
                     }
                 }

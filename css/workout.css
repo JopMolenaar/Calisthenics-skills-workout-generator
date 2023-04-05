@@ -58,10 +58,6 @@ main table tbody tr.extra td input, main table tbody tr.extra th input {
   padding-top: 0.4em;
 }
 
-main div {
-  /* buttons onderaan */
-}
-
 /* some classes that depend on content in the table*/
 .green {
   background-color: #3fa52b;
