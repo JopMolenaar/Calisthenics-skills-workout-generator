@@ -5,14 +5,16 @@ class Progression {
     repsOrSecs;
     parent;
     storage;
+    warmup;
   
-    constructor(name, type, repsOrSecs, parent, storage, difficulty) {
+    constructor(name, type, repsOrSecs, parent, storage, difficulty, warmup) {
       this.name = name;
       this.type = type;
       this.repsOrSecs = repsOrSecs;
       this.parent = parent;
       this.storage = storage;
       this.difficulty = difficulty;
+      this.warmup = warmup;
   
     }
   

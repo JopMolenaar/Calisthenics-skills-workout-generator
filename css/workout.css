@@ -34,9 +34,9 @@ main table .rest {
   font-size: 18px;
 }
 
-main table tbody {
+/* main table tbody { */
   /* does not work with display table on the table */
-}
+/* } */
 
 main table tbody td, main table tbody th {
   border: 1px solid #333;

@@ -1,6 +1,5 @@
 // window.onload(function() {
 
-
 const tablePlace = document.querySelector('#tablesHere');
 const templateTable = document.querySelector(".tableTemplate");
 let tables;
@@ -16,26 +15,24 @@ let mathForSecs1
 let mathForSecs2
 let numberOfWeeks
 
+// the only possible combinations now are: 0, 0 for restday at Sunday. 0, 2 for a restay on Wednesday. 2, 2 for restay at Monday
+let numberOfRestDay = 0
+let numberOfRestDay2 = 0
+
 const setWeekNumberButton = document.getElementById("setWeekNumber");
 
 
 function getNumberOfWeeks(answer){
-  console.log("execute");
   localStorageRemoveItem(`numberOfWeeks`)
-  // localStorage.removeItem(`numberOfWeeks`); 
   if(answer === undefined){
     localStorageSetItem(`numberOfWeeks`, 5)
-    // localStorage.setItem(`numberOfWeeks`, 5); 
-  } else {
-    // localStorage.setItem(`numberOfWeeks`, answer.value); 
+  } else { 
     localStorageSetItem(`numberOfWeeks`, answer.value)
   }
-  // console.log(localStorage.getItem(`numberOfWeeks`));
-  console.log(localStorageGetItem(`numberOfWeeks`));
 }
 numberOfWeeks = localStorageGetItem(`numberOfWeeks`)
-console.log(numberOfWeeks);
 
+// change the content every week
 function appendAllTheTables(){
   //append templates in the html
   for (let j = 0; j < numberOfWeeks; j++) {
@@ -48,15 +45,12 @@ function appendAllTheTables(){
     mathForSecs1 = seconds[0] / numberOfWeeks - 1
     mathForSecs2 = seconds[0] / numberOfWeeks - 0.5
   }
-  mathForSecsAndReps(mathForRep1, mathForRep2, mathForSecs1)
+  mathForSecsAndReps()
 
   for (let i = 0; i < numberOfWeeks; i++) {
-    let tableHTML = templateTable.content.firstElementChild.cloneNode(true);
-    let weekNumber = tableHTML.querySelector(".week").textContent = `Week ${i + 1}`
-    // (+iets toevoegen om de datums van de dagen te bepalen) TODO
-    tablePlace.appendChild(tableHTML);
-    // here is the workout cycle changed by week
-    //first reps then secs
+
+  //   // here is the workout cycle changed by week
+  //   //first reps then secs
     let tableWeek = document.querySelector(`div#tablesHere table:nth-child(${i+1})`)
     let repsRow = tableWeek.querySelectorAll(".reps")
 
@@ -195,31 +189,257 @@ function appendAllTheTables(){
       }
     }
   }
+}
+
+// duplicate the weeks
+function duplicateTemplate(){
+  for (let j = 0; j < numberOfWeeks; j++) {
+    const tablesHere = document.getElementById("tablesHere")
+    const tableTemplate = document.getElementById("tabelTemplateee")
+    const tableHTML = tableTemplate.content.firstElementChild.cloneNode(true);
+    let weekNumber = tableHTML.querySelector(".week").textContent = `Week ${j + 1}`
+    tablesHere.appendChild(tableHTML);
+  }
   tables = document.querySelectorAll('.tables');
 }
+
+
+
+// duplicate the rows
+// this is the function that desides how the template looks
+const template = document.querySelector("#templateee")
+function createTemplate (){
+
+  duplicateTemplate()
+
+  for (let i = 0; i < allTablePlacesArray.length; i++) {
+    const place = allTablePlacesArray[i];
+
+    function checkForWord(str, word, secOrRep) {
+      if (str.includes(word) && str.includes(secOrRep)) {
+        if(secOrRep === "Reps"){
+          const content = 1
+          if(word === "Push"){
+            const number = 1
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Pull"){
+            const number = 2
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Core"){
+            const number = 3
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Legs"){
+            const number = 3
+            placeInRightBody(number, content)
+          // place in push
+          }
+        } else if (secOrRep === "Secs"){
+          const content = 2
+          if(word === "Push"){
+            const number = 1
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Pull"){
+            const number = 2
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Core"){
+            const number = 3
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Legs"){
+            const number = 3
+            placeInRightBody(number, content)
+          // place in push
+          }
+        } else if (secOrRep === "MH"){
+          const content = 3
+          if(word === "Push"){
+            const number = 1
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Pull"){
+            const number = 2
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Core"){
+            const number = 3
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Legs"){
+            const number = 3
+            placeInRightBody(number, content)
+          // place in push
+          }
+        } else if (secOrRep === "MR"){
+          const content = 4
+          if(word === "Push"){
+            const number = 1
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Pull"){
+            const number = 2
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Core"){
+            const number = 3
+            placeInRightBody(number, content)
+          // place in push
+          } else if(word === "Legs"){
+            const number = 3
+            placeInRightBody(number, content)
+          // place in push
+          }
+        }
+      }
+      
+    }
+    let myString = `${place}`;
+    let myWord = ["Push", "Pull", "Core", "Legs", "Other"];
+    let secsOrReps = ["Secs", "Reps", "MH", "MR"];
+
+    for (let j = 0; j < myWord.length; j++) {
+      const word = myWord[j];
+      for (let h = 0; h < secsOrReps.length; h++) {
+        const secOrRep = secsOrReps[h];
+        checkForWord(myString, word, secOrRep); 
+      }
+    }
+
+    function placeInRightBody(id, content){
+
+      for (let i = 0; i < tables.length; i++) {
+        // dupliceer template and add classlist to row
+        let tableHTML = template.content.firstElementChild.cloneNode(true);
+        tableHTML.classList.add(`${place}`)
+
+        let tableHTML2 = template.content.firstElementChild.cloneNode(true);
+        tableHTML2.classList.add(`${place}`)
+
+        const testTablePlace = document.querySelector(`table:nth-child(${i + 1}) tbody:nth-child(${((id * 2) + 1)+ numberOfRestDay})`)
+        const secondTestTablePlace = document.querySelector(`table:nth-child(${i + 1}) tbody:nth-child(${((id * 2) + 7) + numberOfRestDay2})`)
+
+        switch (content) {
+          case 1:
+            tableHTML.classList.add(`reps`)
+            tableHTML2.classList.add(`reps`)
+
+            tableHTML.querySelector(".set1").textContent = "x12"
+            tableHTML.querySelector(".set2").textContent = "x10"
+            tableHTML.querySelector(".set3").textContent = "x10"
+            tableHTML.querySelector(".set4").textContent = "x8"
+
+            tableHTML2.querySelector(".set1").textContent = "x12"
+            tableHTML2.querySelector(".set2").textContent = "x10"
+            tableHTML2.querySelector(".set3").textContent = "x10"
+            tableHTML2.querySelector(".set4").textContent = "x8"
+            break;
+
+          case 2:
+            tableHTML.classList.add(`secs`)
+            tableHTML2.classList.add(`secs`)
+
+            tableHTML.querySelector(".set1").textContent = "20 sec"
+            tableHTML.querySelector(".set2").textContent = "20 sec"
+            tableHTML.querySelector(".set3").textContent = "16 sec"
+            tableHTML.querySelector(".set4").textContent = "12 sec"
+
+            tableHTML.querySelector(".band1").textContent = "50%"
+            tableHTML.querySelector(".band2").textContent = "70%"
+            tableHTML.querySelector(".band3").textContent = "75%"
+            tableHTML.querySelector(".band4").textContent = "80%"
+
+            tableHTML.querySelector(".band1").classList.add("green")
+            tableHTML.querySelector(".band2").classList.add("yellow")
+            tableHTML.querySelector(".band3").classList.add("yellow")
+            tableHTML.querySelector(".band4").classList.add("red")
+
+            tableHTML2.querySelector(".set1").textContent = "20 sec"
+            tableHTML2.querySelector(".set2").textContent = "20 sec"
+            tableHTML2.querySelector(".set3").textContent = "16 sec"
+            tableHTML2.querySelector(".set4").textContent = "12 sec"
+
+            tableHTML2.querySelector(".band1").textContent = "50%"
+            tableHTML2.querySelector(".band2").textContent = "70%"
+            tableHTML2.querySelector(".band3").textContent = "75%"
+            tableHTML2.querySelector(".band4").textContent = "80%"
+
+            tableHTML2.querySelector(".band1").classList.add("green")
+            tableHTML2.querySelector(".band2").classList.add("yellow")
+            tableHTML2.querySelector(".band3").classList.add("yellow")
+            tableHTML2.querySelector(".band4").classList.add("red")
+            break;
+        case 3:
+            tableHTML.querySelector(".set1").textContent = "MH/30 sec"
+            tableHTML.querySelector(".set2").textContent = "MH/30 sec"
+            tableHTML.querySelector(".set3").textContent = "MH/30 sec"
+
+            tableHTML2.querySelector(".set1").textContent = "MH/30 sec"
+            tableHTML2.querySelector(".set2").textContent = "MH/30 sec"
+            tableHTML2.querySelector(".set3").textContent = "MH/30 sec"
+
+          break;
+          case 4:
+            tableHTML.querySelector(".set1").textContent = "x8-12"
+            tableHTML.querySelector(".set2").textContent = "x8-12"
+            tableHTML.querySelector(".set3").textContent = "x8-12"
+            tableHTML.querySelector(".set4").textContent = "x8-12"
+
+            tableHTML2.querySelector(".set1").textContent = "x8-12"
+            tableHTML2.querySelector(".set2").textContent = "x8-12"
+            tableHTML2.querySelector(".set3").textContent = "x8-12"
+            tableHTML2.querySelector(".set4").textContent = "x8-12"
+            break;
+          default:
+            console.error("we dont have that switch for the content")
+            break;
+        }
+
+
+
+        testTablePlace.appendChild(tableHTML);
+        secondTestTablePlace.appendChild(tableHTML2);
+      }
+    }
+  }
+  function addExtraOptions(){
+    const extraOptionsNumber = 2
+    for (let j = 0; j < extraOptionsNumber; j++) {
+      for (let i = 0; i < tables.length; i++) {
+        // duplicate template and add classlist to row
+        for (let j = 0; j < 3; j++) {
+          const testTablePlace = document.querySelector(`table:nth-child(${i + 1}) tbody:nth-child(${(((j + 1) * 2) + 1) + numberOfRestDay})`)
+          const secondTestTablePlace = document.querySelector(`table:nth-child(${i + 1}) tbody:nth-child(${(((j + 1) * 2) + 7) + numberOfRestDay2})`)
+          const extraTemplate = document.getElementById("extraTemplate")
+          const extraOptions1 = extraTemplate.content.firstElementChild.cloneNode(true);
+          const extraOptions2 = extraTemplate.content.firstElementChild.cloneNode(true);
+          testTablePlace.appendChild(extraOptions1);
+          secondTestTablePlace.appendChild(extraOptions2);
+        }
+      }
+    }
+  }
+  addExtraOptions()
+}
+
 
 function getPageTwo() {
   let page = document.body.id;
   switch (page) {
     case "index":
       setWeekNumberButton.addEventListener("change", getNumberOfWeeks(this))
-      // let allselects = document.querySelectorAll("select")
-      // console.log(allselects);
-      // for (let i = 0; i < allselects.length; i++) {
-      //   allselects[i].addEventListener("change", show(this, id) )
-      // }
       break;
 
     case "workout":
-      // numberOfWeeks = localStorage.getItem(`numberOfWeeks`); 
-      // console.log(numberOfWeeks);
       break;
-
+      case "template":
+        break;
     default:
     console.error("This id is not supported")
       break;
   }
 }
 getPageTwo()
-
-// });

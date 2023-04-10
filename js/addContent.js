@@ -313,14 +313,35 @@ const placesInTables = [];
 
 function setExerciseInRightPlace (){
     // append template to tablesHere div
+    createTemplate()
     appendAllTheTables()
 
-  for (let i = 0; i < AllTablePlacesArray.length; i++) {
+    // set restday
+    const allTbodys = document.querySelectorAll("tbody")
+    allTbodys.forEach((tbdoy) =>{
+      let secondRow = tbdoy.querySelector("tr:nth-child(2)")
+      if(secondRow === null){
+        const row = tbdoy.querySelector("tr:nth-child(1) td")
+        const rowsTh = tbdoy.querySelectorAll("tr:nth-child(1) th")
+        row.textContent = "Restday"
+        row.style.backgroundColor = "#333"
+        row.style.color = "white"
+        row.colSpan = "14"
+        rowsTh.forEach((th)=>{
+          th.style.display = "none"
+        })
+      }
+    })
+
+    // get all current places
+  for (let i = 0; i < allTablePlacesArray.length; i++) {
     const placesInCurrentTable = [];
     tables.forEach((table) => {
-      const place = table.querySelectorAll(`.${AllTablePlacesArray[i]} th`);
-      placesInCurrentTable.push(place[0]);
-      placesInCurrentTable.push(place[1]);
+      const place = table.querySelectorAll(`.${allTablePlacesArray[i]} th`);
+      if(place.length > 0){
+        placesInCurrentTable.push(place[0]);
+        placesInCurrentTable.push(place[1]);
+      }
     });
     placesInTables.push(placesInCurrentTable);
   }
@@ -331,14 +352,16 @@ function setExerciseInRightPlace (){
         for (let j = 0; j < elements.length; j++) {
           const element = elements[j];
           if(elements != undefined){
-            element.textContent = localStorage.getItem(`${AllTablePlacesArray[h]}`);
+            element.textContent = localStorage.getItem(`${allTablePlacesArray[h]}`);
             }else {
               element.parentElement.style.display = "none"
               }
         }
     }
+
+
   const  allDateTRs = document.querySelectorAll(".date")
-    function loadTable() {
+    function loadTableTime() {
       var today = new Date();
       var calendarDates = [];
       for (var i = 0; i < 90; i++) {
@@ -359,19 +382,33 @@ function setExerciseInRightPlace (){
         }
       }
     }
-    loadTable()
+    loadTableTime()
+
+    //set warmup
+        progressionsArray.forEach((progressions) => {
+          progressions.forEach((progression) =>{
+              const progressionClasses = document.querySelectorAll(`.${progression.storage}`)
+              progressionClasses.forEach((pClass)=>{
+                const text = pClass.querySelector("th")
+                if(text.innerText === `${progression.name}` && `${progression.warmup}` === "yes"){
+                  console.log(true);
+                  text.parentElement.querySelector(".warmup").textContent = "Warmup"
+                }
+              })
+          })
+        })
 }
 
-// all the undefined storages parents wil have a display none
+// all the undefined storages parents will have a display none
 function validatieCheck (){
       for (let h = 0; h < placesInTables.length; h++) {
-        if (localStorage.getItem(`${AllTablePlacesArray[h]}`) == undefined){
-          localStorage.removeItem(`${AllTablePlacesArray[h]}`)
+        if (localStorage.getItem(`${allTablePlacesArray[h]}`) == undefined){
+          localStorage.removeItem(`${allTablePlacesArray[h]}`)
         const elements = placesInTables[h]
           for (let j = 0; j < elements.length; j++) {
             const element = elements[j];
             if(element != undefined){
-            element.parentElement.style.display = "none"
+            element.parentElement.style.display = "none";
           } else {
               console.error("There are some exercises that don't have a place in the table");
             }
@@ -385,8 +422,8 @@ function validatieCheck (){
 
 // reset all the content in the table
 function resetOptionalItems(){
-  for (let i = 0; i < AllTablePlacesArray.length; i++) {
-    localStorage.removeItem(`${AllTablePlacesArray[i]}`);
+  for (let i = 0; i < allTablePlacesArray.length; i++) {
+    localStorage.removeItem(`${allTablePlacesArray[i]}`);
     }
 }
 
@@ -395,7 +432,6 @@ function resetOptionalItems(){
 let buttonArray;
 // shows n buttons for n tables
 function addButtonElement() {
-  console.log(tables);
     for (let i = 0; i <= (tables.length - 1); i++){
       let button = document.createElement('button');
       button.classList.add("button");
@@ -451,7 +487,6 @@ function disable(selectElement, disabledOptions) {
       disabledOptions[1] = "";
       disabledOptions[2] = "";
       option.disabled = false; // enable option
-      console.log(undefined);
       disable(selectGoal[0], disabledOptions)
     } else if (disabledOptions[1] === undefined){
       disabledOptions[1] = "";
@@ -487,23 +522,25 @@ function getPage() {
     case "index":
       disableOption()
       questions[0].style.display = "flex";
-      resetOptionalItems();
       createAllGoals()
       createProgressions()
       addSelectOptions()
       createNormalExercises()
+      resetOptionalItems();
       generateButton.disabled = true
       generateButton.addEventListener("click", setNormalExercises)
       getNumberOfWeeks()
       break;
 
     case "workout":
+      createAllGoals()
+      createProgressions()
+      createNormalExercises()
       setExerciseInRightPlace()
       validatieCheck()
       addButtonElement()
       buttonPlace.addEventListener("click", showRightTable)    
       break;
-
     default:
     console.error("This id is not supported")
       break;
