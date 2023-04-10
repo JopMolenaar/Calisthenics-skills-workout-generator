@@ -391,7 +391,6 @@ function setExerciseInRightPlace (){
               progressionClasses.forEach((pClass)=>{
                 const text = pClass.querySelector("th")
                 if(text.innerText === `${progression.name}` && `${progression.warmup}` === "yes"){
-                  console.log(true);
                   text.parentElement.querySelector(".warmup").textContent = "Warmup"
                 }
               })
